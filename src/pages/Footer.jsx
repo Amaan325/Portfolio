@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 const Footer = () => {
   return (
-    <div className="relative z-0 w-full h-[680px] bg-gradient-to-r from-[#8e5496] via-[#7154ac] to-[#212d85] py-20 px-6 text-white">
+    <div id="contact" className="relative z-0 w-full h-[680px] bg-gradient-to-r from-[#8e5496] via-[#7154ac] to-[#212d85] py-20 px-6 text-white">
       <div className="max-w-6xl mx-auto flex flex-col lg:flex-row items-center  justify-between gap-20">
         {/* Contact Image with animation */}
         <motion.div

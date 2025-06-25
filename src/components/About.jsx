@@ -43,37 +43,38 @@ const About = () => {
               Welcome to my Portfolio
             </div>
 
-           <div className="text-6xl font-semibold text-white leading-tight">
-  <div className="flex flex-col">
-    <div className="flex">
-      <span>Hi! I'm Amaan</span>
-      <span className="inline-block min-w-[120px] ml-2">
-        <ReactTyped
-          strings={["Web", "UI/UX"]}
-          typeSpeed={150}
-          backSpeed={350}
-          backDelay={1500}
-          loop
-        />
-      </span>
-    </div>
-    <div className="min-h-[75px]">
-      <ReactTyped
-        strings={["Developer", "Designer"]}
-        typeSpeed={150}
-        backSpeed={104}
-        backDelay={1500}
-        loop
-      />
-    </div>
-  </div>
-</div>
+            <div className="text-6xl font-semibold text-white leading-tight">
+              <div className="flex flex-col">
+                <div className="flex">
+                  <span>Hi! I'm Amaan</span>
+                  <span className="inline-block min-w-[120px] ml-2">
+                    <ReactTyped
+                      strings={["Web", "UI/UX"]}
+                      typeSpeed={150}
+                      backSpeed={350}
+                      backDelay={1500}
+                      loop
+                    />
+                  </span>
+                </div>
+                <div className="min-h-[75px]">
+                  <ReactTyped
+                    strings={["Developer", "Designer"]}
+                    typeSpeed={150}
+                    backSpeed={104}
+                    backDelay={1500}
+                    loop
+                  />
+                </div>
+              </div>
+            </div>
 
             <p className="text-md poppins-light text-gray-300">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur
-              quidem eum delectus, possimus dolor laboriosam, tenetur aliquam
-              necessitatibus eos dignissimos alias quos nihil nulla placeat
-              excepturi aliquid beatae. Natus, repellendus!
+              Full-stack web developer skilled in the MERN stack (MongoDB,
+              Express.js, React.js, Node.js) with experience in Vue.js, Redux,
+              and Firebase. Proficient in Tailwind CSS, Material UI, Bootstrap,
+              and deploying apps using AWS EC2 and PM2. Currently exploring
+              Docker for containerized deployments.
             </p>
 
             <div className="flex items-center gap-2 mt-2 pb-44">
@@ -85,7 +86,11 @@ const About = () => {
           </div>
 
           <div className="w-[380px] ml-8 flex-shrink-0 mr-6">
-            <img src={Animation} alt="Animated" className="w-full animate-float" />
+            <img
+              src={Animation}
+              alt="Animated"
+              className="w-full animate-float"
+            />
           </div>
         </div>
       </div>

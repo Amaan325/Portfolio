@@ -22,10 +22,10 @@ const Skills = () => {
   };
 
   const skillsData = [
-    { img: Meter1, label: "Web Development" },
-    { img: Meter2, label: "Brand Identity" },
+    { img: Meter1, label: "Backend Development" },
+    { img: Meter2, label: "Frontend Development" },
     { img: Meter3, label: "UI/UX Design" },
-    { img: Meter1, label: "Algorithms" },
+    { img: Meter1, label: "AWS" },
   ];
 
   return (
