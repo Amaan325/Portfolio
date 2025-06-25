@@ -132,3 +132,11 @@ body, html {
 .animate-float {
   animation: float 3s ease-in-out infinite;
 }
+/* In your global CSS or index.css */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

@@ -18,20 +18,20 @@ const NewsLetter = () => {
 
       {/* Subscription Section */}
       <div className="w-full text-center flex justify-center pt-32 pb-12 relative z-10">
-        <div className="w-[1100px] bg-white flex items-start rounded-4xl px-32 py-16 gap-12 shadow-xl -mt-52">
+        <div className="w-full max-w-[1100px] bg-white flex flex-col md:flex-row items-start rounded-4xl px-6 md:px-32 py-16 gap-8 shadow-xl -mt-40 md:-mt-52">
           <h1 className="font-bold text-2xl text-black text-left">
             Subscribe to our <br />
-            Newsletter <br />
-            & Never miss latest updates
+            Newsletter <br />& Never miss latest updates
           </h1>
 
-          <span className="border-2 w-[500px] border-gray-400 rounded-2xl ml-4 flex items-center bg-white">
+          <span className="w-full max-w-md border-2 border-gray-400 rounded-2xl flex flex-col sm:flex-row items-stretch sm:items-center bg-white">
             <input
               type="email"
               placeholder="Email Address"
-              className="p-3 h-[60px] w-full rounded-l-2xl placeholder-gray-500 text-black bg-transparent outline-none"
+              className="p-3 h-14 sm:h-[60px] w-full sm:rounded-l-2xl placeholder-gray-500 text-black bg-transparent outline-none"
             />
-            <button className="mr-1 w-[230px] h-[55px] p-3 bg-gradient-to-r from-[#8e5496] via-[#7154ac] to-[#212d85] text-white rounded-2xl">
+
+            <button className="w-full sm:w-[230px] h-12 sm:h-[55px] p-3 bg-gradient-to-r from-[#8e5496] via-[#7154ac] to-[#212d85] text-white rounded-2xl sm:rounded-l-none sm:rounded-r-2xl">
               Submit
             </button>
           </span>
@@ -39,9 +39,11 @@ const NewsLetter = () => {
       </div>
 
       {/* Logo and Social Icons Section */}
-      <div className="relative z-10 flex items-center justify-between gap-6 px-28 mt-12 pb-3">
-        <h1 className="text-white text-4xl font-semibold">thequreshidev</h1>
-        <div className="flex flex-col gap-4 items-end">
+      <div className="relative z-10 w-full flex flex-col md:flex-row items-center justify-between gap-6 px-6 md:px-28 mt-12 pb-6 text-center md:text-left">
+        <h1 className="text-white text-3xl sm:text-4xl font-semibold">
+          thequreshidev
+        </h1>
+        <div className="flex flex-col items-center md:items-end gap-3">
           <div className="flex gap-3">
             {/* LinkedIn Icon */}
             <a

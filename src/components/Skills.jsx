@@ -9,12 +9,12 @@ const Skills = () => {
   const scrollRef = useRef(null);
 
   const scroll = (direction) => {
-    const imageWidth = 200;
-    const gap = 112;
-    const scrollAmount = imageWidth + gap;
+    const container = scrollRef.current;
+    const child = container?.querySelector(".skill-card");
 
-    if (scrollRef.current) {
-      scrollRef.current.scrollBy({
+    if (container && child) {
+      const scrollAmount = child.offsetWidth + 28; // 28px matches gap
+      container.scrollBy({
         left: direction === "left" ? -scrollAmount : scrollAmount,
         behavior: "smooth",
       });
@@ -29,8 +29,8 @@ const Skills = () => {
   ];
 
   return (
-    <div className="relative px-6 bg-[#0a0a0a] z-0" id="skills">
-      {/* Background Image with reduced opacity */}
+    <div className="relative px-4 sm:px-6 bg-[#0a0a0a] z-0" id="skills">
+      {/* Background Layer */}
       <div
         className="absolute inset-0 z-0"
         style={{
@@ -42,18 +42,17 @@ const Skills = () => {
         }}
       ></div>
 
-      {/* Skills Content */}
-      <div className="relative z-20 py-16 -mt-28">
-        <div className="bg-[#111111] -mt-32 rounded-4xl p-6 text-white text-center max-w-6xl mx-auto shadow-2xl">
-          <h1 className="text-3xl font-semibold mb-2 mt-9">Skills</h1>
-          <p className="mb-6 text-gray-300 max-w-xl mx-auto mt-9">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore animi
-            aspernatur id magni maxime iure perspiciatis excepturi ipsum tempora.
+      {/* Content */}
+      <div className="relative z-20 py-16">
+        <div className="bg-[#111111] rounded-4xl p-6 text-white text-center max-w-6xl mx-auto shadow-2xl">
+          <h1 className="text-3xl font-semibold mb-2 mt-6">Skills</h1>
+          <p className="mb-6 text-gray-300 max-w-xl mx-auto mt-6 text-sm sm:text-base">
+            I work across the full stack to build performant, clean, and scalable web solutions using modern technologies.
           </p>
 
           <div className="flex items-center justify-center gap-4 mt-12 mb-12">
-            <button 
-              onClick={() => scroll("left")} 
+            <button
+              onClick={() => scroll("left")}
               className="text-3xl text-white hover:text-[#7154ac] transition-colors"
             >
               <IoIosArrowBack />
@@ -61,12 +60,12 @@ const Skills = () => {
 
             <div
               ref={scrollRef}
-              className="flex overflow-hidden gap-28 w-[824px]"
+              className="flex overflow-x-auto gap-7 sm:gap-14 scroll-smooth scrollbar-hide w-[240px] sm:w-[720px] px-2 snap-x snap-mandatory"
             >
               {skillsData.map((skill, index) => (
                 <div
                   key={index}
-                  className="w-[200px] flex-shrink-0 flex flex-col items-center text-center"
+                  className="skill-card snap-center min-w-[200px] sm:w-[200px] flex-shrink-0 flex flex-col items-center text-center"
                 >
                   <img
                     src={skill.img}
@@ -78,8 +77,8 @@ const Skills = () => {
               ))}
             </div>
 
-            <button 
-              onClick={() => scroll("right")} 
+            <button
+              onClick={() => scroll("right")}
               className="text-3xl text-white hover:text-[#7154ac] transition-colors"
             >
               <IoIosArrowForward />

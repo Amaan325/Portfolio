@@ -1,23 +1,35 @@
 import React from "react";
-import Navbar from "../components/Navbar";
 import About from "../components/About";
 import Skills from "../components/Skills";
 import Project from "../components/Project";
 import Footer from "./Footer";
 import NewsLetter from "../components/NewsLetter";
+
 const Home = () => {
   return (
-    <>
-      {/* No background here now */}
-      <div className="">
+    <div className="w-full overflow-x-hidden">
+      {/* Hero/About Section */}
+      <section className="w-full">
         <About />
-      </div>
+      </section>
 
-      {/* Project Section - Full black background */}
-      <Project />
-      <Footer />
-      <NewsLetter />
-    </>
+      {/* Skills Section (already inside About) */}
+
+      {/* Projects Section */}
+      <section className="w-full">
+        <Project />
+      </section>
+
+      {/* Contact Section */}
+      <section className="w-full">
+        <Footer />
+      </section>
+
+      {/* Newsletter */}
+      <section className="w-full">
+        <NewsLetter />
+      </section>
+    </div>
   );
 };
 

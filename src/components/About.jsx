@@ -11,11 +11,7 @@ const About = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 100) {
-        setScrolled(true);
-      } else {
-        setScrolled(false);
-      }
+      setScrolled(window.scrollY > 100);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -23,12 +19,13 @@ const About = () => {
   }, []);
 
   return (
-    <div className="relative z-0 " id="home">
-      {/* About Section with reduced bottom padding */}
+    <div className="relative z-0" id="home">
+      {/* Background Section */}
       <div
-        className="min-h-[90vh] bg-cover bg-center pb-24"
+        className="min-h-[90vh] bg-cover bg-center pb-12"
         style={{ backgroundImage: `url(${banner})` }}
       >
+        {/* Navbar */}
         <div
           className={`fixed top-0 left-0 w-full z-50 transition-colors duration-300 ${
             scrolled ? "bg-black bg-opacity-90 shadow-md" : "bg-transparent"
@@ -37,17 +34,19 @@ const About = () => {
           <Navbar />
         </div>
 
-        <div className="flex items-center justify-between min-h-[90vh] pt-20 px-20">
-          <div className="flex flex-col gap-6 max-w-[60%] min-w-0 pt-32">
-            <div className=" inline-flex items-center justify-center w-52 border border-gray-300 h-10 text-gray-200 text-md font-semibold shadow-md bg-gradient-to-r from-[#8e5496] via-[#7154ac] to-[#212d85]">
+        {/* Main Content */}
+        <div className="flex flex-col lg:flex-row items-center justify-between min-h-[90vh] pt-32 px-6 sm:px-12 md:px-16 lg:px-20 gap-12">
+          {/* Text Content */}
+          <div className="flex flex-col gap-6 lg:max-w-[60%] text-center lg:text-left">
+            <div className="inline-flex items-center justify-center w-52 h-10 text-white text-md font-semibold shadow-md mx-auto lg:mx-0 bg-gradient-to-r from-[#8e5496] via-[#7154ac] to-[#212d85] border border-gray-300">
               Welcome to my Portfolio
             </div>
 
-            <div className="text-6xl font-semibold text-white leading-tight">
-              <div className="flex flex-col">
-                <div className="flex">
+            <div className="text-4xl sm:text-5xl lg:text-6xl font-semibold text-white leading-tight">
+              <div className="flex flex-col items-center lg:items-start">
+                <div className="flex flex-wrap justify-center lg:justify-start">
                   <span>Hi! I'm Amaan</span>
-                  <span className="inline-block min-w-[120px] ml-2">
+                  <span className="inline-block min-w-[100px] ml-2 text-purple-400">
                     <ReactTyped
                       strings={["Web", "UI/UX"]}
                       typeSpeed={150}
@@ -57,7 +56,7 @@ const About = () => {
                     />
                   </span>
                 </div>
-                <div className="min-h-[75px]">
+                <div className="min-h-[60px]">
                   <ReactTyped
                     strings={["Developer", "Designer"]}
                     typeSpeed={150}
@@ -69,7 +68,7 @@ const About = () => {
               </div>
             </div>
 
-            <p className="text-md poppins-light text-gray-300">
+            <p className="text-md poppins-light text-gray-300 max-w-xl mx-auto lg:mx-0">
               Full-stack web developer skilled in the MERN stack (MongoDB,
               Express.js, React.js, Node.js) with experience in Vue.js, Redux,
               and Firebase. Proficient in Tailwind CSS, Material UI, Bootstrap,
@@ -77,7 +76,7 @@ const About = () => {
               Docker for containerized deployments.
             </p>
 
-            <div className="flex items-center gap-2 mt-2 pb-44">
+            <div className="flex items-center justify-center lg:justify-start gap-2 mt-2">
               <button className="bg-[#212d85] hover:bg-[#2b38a5] text-white px-6 py-2 rounded-full font-semibold transition duration-300">
                 Let's Connect
               </button>
@@ -85,7 +84,8 @@ const About = () => {
             </div>
           </div>
 
-          <div className="w-[380px] ml-8 flex-shrink-0 mr-6">
+          {/* Image */}
+          <div className="w-[250px] sm:w-[300px] md:w-[340px] lg:w-[380px]">
             <img
               src={Animation}
               alt="Animated"
@@ -95,7 +95,7 @@ const About = () => {
         </div>
       </div>
 
-      {/* Skills Section will overlap this */}
+      {/* Skills Section */}
       <Skills />
     </div>
   );
